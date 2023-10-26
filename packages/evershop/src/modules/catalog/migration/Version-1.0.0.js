@@ -402,8 +402,8 @@ module.exports = exports = async (connection) => {
     `CREATE INDEX "FK_CATEGORY_DESCRIPTION" ON "category_description" ("category_description_category_id")`
   );
 
-  // Create 3 default categories, Kids, Men, Women
-  const kids = await insert('category')
+  // Create 5 default categories, Home, Rule, Product, Calender, Tracking
+  const home = await insert('category')
     .given({
       status: 1,
       include_in_nav: 1
@@ -412,17 +412,17 @@ module.exports = exports = async (connection) => {
 
   await insert('category_description')
     .given({
-      category_description_category_id: kids.insertId,
-      name: 'Kids',
-      url_key: 'kids',
-      meta_title: 'Kids',
-      meta_description: 'Kids',
-      meta_keywords: 'Kids',
-      description: 'Kids'
+      category_description_category_id: home.insertId,
+      name: 'Trang chủ',
+      url_key: 'Trang chủ',
+      meta_title: 'Trang chủ',
+      meta_description: 'Trang chủ',
+      meta_keywords: 'Trang chủ',
+      description: 'Trang chủ'
     })
     .execute(connection);
 
-  const women = await insert('category')
+  const rulentutorial = await insert('category')
     .given({
       status: 1,
       include_in_nav: 1
@@ -431,17 +431,17 @@ module.exports = exports = async (connection) => {
 
   await insert('category_description')
     .given({
-      category_description_category_id: women.insertId,
-      name: 'Women',
-      url_key: 'women',
-      meta_title: 'Women',
-      meta_description: 'Women',
-      meta_keywords: 'Women',
-      description: 'Women'
+      category_description_category_id: rulentutorial.insertId,
+      name: 'Rule - Hướng dẫn',
+      url_key: 'rulentutorial',
+      meta_title: 'Rule - Hướng dẫn',
+      meta_description: 'Rule - Hướng dẫn',
+      meta_keywords: 'Rule - Hướng dẫn',
+      description: 'Rule - Hướng dẫn'
     })
     .execute(connection);
 
-  const men = await insert('category')
+  const products = await insert('category')
     .given({
       status: 1,
       include_in_nav: 1
@@ -450,13 +450,51 @@ module.exports = exports = async (connection) => {
 
   await insert('category_description')
     .given({
-      category_description_category_id: men.insertId,
-      name: 'Men',
-      url_key: 'men',
-      meta_title: 'Men',
-      meta_description: 'Men',
-      meta_keywords: 'Men',
-      description: 'Men'
+      category_description_category_id: products.insertId,
+      name: 'Sản phẩm',
+      url_key: 'products',
+      meta_title: 'Sản phẩm',
+      meta_description: 'Sản phẩm',
+      meta_keywords: 'Sản phẩm',
+      description: 'Sản phẩm'
+    })
+    .execute(connection);
+
+  const calendar = await insert('category')
+    .given({
+      status: 1,
+      include_in_nav: 1
+    })
+    .execute(connection);
+
+  await insert('category_description')
+    .given({
+      category_description_category_id: calendar.insertId,
+      name: 'Lịch Order',
+      url_key: 'calendar',
+      meta_title: 'Lịch Order',
+      meta_description: 'Lịch Order',
+      meta_keywords: 'Lịch Order',
+      description: 'Lịch Order'
+    })
+    .execute(connection);
+
+  const tracking = await insert('category')
+    .given({
+      status: 1,
+      include_in_nav: 1
+    })
+    .execute(connection);
+
+  await insert('category_description')
+    .given({
+      category_description_category_id: tracking.insertId,
+      name: 'Tra cứu thông tin đơn hàng',
+      url_key: 'tracking',
+      meta_title: 'Tra cứu thông tin đơn hàng',
+      meta_description: 'Tra cứu thông tin đơn hàng',
+      meta_keywords: 'Tra cứu thông tin đơn hàng',
+      description: 'Tra cứu thông tin đơn hàng'
     })
     .execute(connection);
 

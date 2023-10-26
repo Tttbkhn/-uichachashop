@@ -6,6 +6,7 @@ import { Price } from '@components/frontStore/catalog/product/list/item/Price';
 import Area from '@components/common/Area';
 import { get } from '@evershop/evershop/src/lib/util/get';
 import { _ } from '@evershop/evershop/src/lib/locale/translate';
+import { ProductDetail } from './item/ProductDetail';
 
 export default function ProductList({ products = [], countPerRow = 3 }) {
   if (products.length === 0) {
@@ -54,10 +55,17 @@ export default function ProductList({ products = [], countPerRow = 3 }) {
             },
             {
               component: { default: Price },
-              props: { ...p.price },
+              // props: { ...p.price },
+              props: { ...{regular: {value: 234234, text:"aaa"}, special: {value: 234234, text:"333"}} },
               sortOrder: 30,
               id: 'price'
-            }
+            },
+            {
+              component: { default: ProductDetail },
+              props: { product: p },
+              sortOrder: 40,
+              id: 'productDetail'
+            },
           ]}
         />
       ))}

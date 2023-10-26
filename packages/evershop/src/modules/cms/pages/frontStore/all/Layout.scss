@@ -53,37 +53,47 @@ html {
     border-radius: 2px;
   }
 }
+
 body {
   color: #3a3a3a;
 }
+
 p {
   margin-bottom: 1rem;
 }
+
 @media screen and (max-width: 767px) {
   $font-size-base: $font-size-sm;
+
   body {
     font-size: $font-size-base;
     line-height: $line-height-sm;
+
     .h1,
     h1 {
       font-size: $h1-font-size;
     }
+
     .h2,
     h2 {
       font-size: $h2-font-size;
     }
+
     .h3,
     h3 {
       font-size: $h3-font-size;
     }
+
     .h4,
     h4 {
       font-size: $h4-font-size;
     }
+
     .h5,
     h5 {
       font-size: $h5-font-size;
     }
+
     .h6,
     h6 {
       font-size: $h6-font-size;
@@ -103,26 +113,32 @@ p {
   body {
     font-size: $font-size-base;
     line-height: $line-height-md;
+
     .h1,
     h1 {
       font-size: $h1-font-size;
     }
+
     .h2,
     h2 {
       font-size: $h2-font-size;
     }
+
     .h3,
     h3 {
       font-size: $h3-font-size;
     }
+
     .h4,
     h4 {
       font-size: $h4-font-size;
     }
+
     .h5,
     h5 {
       font-size: $h5-font-size;
     }
+
     .h6,
     h6 {
       font-size: $h6-font-size;
@@ -142,32 +158,39 @@ p {
   body {
     font-size: $font-size-base;
     line-height: $line-height-lg;
+
     .h1,
     h1 {
       font-size: $h1-font-size;
     }
+
     .h2,
     h2 {
       font-size: $h2-font-size;
     }
+
     .h3,
     h3 {
       font-size: $h3-font-size;
     }
+
     .h4,
     h4 {
       font-size: $h4-font-size;
     }
+
     .h5,
     h5 {
       font-size: $h5-font-size;
     }
+
     .h6,
     h6 {
       font-size: $h6-font-size;
     }
   }
 }
+
 h1,
 h2,
 h3,
@@ -176,13 +199,16 @@ h5,
 h6 {
   font-weight: 600;
 }
+
 .wrapper .content {
   min-height: calc(100vh - 50px);
 }
+
 .header {
   padding: 2.5rem;
   border-bottom: 1px solid #ebebeb;
   margin-bottom: 3rem;
+
   @media only screen and (min-width: 1200px) {
     padding-left: 50px;
     padding-right: 50px;
@@ -192,49 +218,85 @@ h6 {
 .container {
   margin: 0 auto;
 }
+
 .page-width {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 22px;
+
   @media screen and (min-width: 1200px) {
     padding: 0 55px;
   }
 }
 
 .footer {
-  background-color: #f6f6f6;
+  background-color: #415D96;
   margin-top: 9rem;
-  padding-top: 1rem;
+  padding-top: 2rem;
   padding-block-end: 1rem;
   border-top: 1px solid #ddd;
+
   .card-icons {
     svg {
       height: 4rem;
     }
   }
+
+  .row {
+    // display: flex;
+    grid-template-columns: 1fr auto auto;
+    display: grid;
+    //         grid-template-columns: 1fr auto;
+  }
+
+  .column {
+    flex: 50%;
+    padding-right: 5rem;
+    color: #E5E5E5;
+  }
+
+  .header-column {
+    font-size: 18px;
+  }
+
+  .item {
+    font-size: 12px;
+  }
+
+  .flex-item {
+    flex: 1;
+}
+
   .copyright {
-    font-size: 13px;
+    font-size: 14px;
+    color: #FBFBFB;
   }
 }
+
 table {
   width: 100%;
   border-collapse: collapse;
+
   td,
   th {
     border: 1px solid var(--divider);
     padding: 0.5rem;
     text-align: left;
   }
+
   th {
     vertical-align: top;
   }
+
   &.listing {
+
     td,
     th {
       border-left: 0;
       border-right: 0;
       padding: 1rem;
     }
+
     th {
       border: 0;
       padding-top: 2rem;
